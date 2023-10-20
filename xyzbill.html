@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+table{
+border: 2px solid blue;  
+font-size: 20px;  
+width: 80%;  
+height: 50%;  
+}
+td{  
+border: 5px solid violet;  
+background-color: cyan;  
+}  
+</style>
+<script>
+
+
+function calculate()
+{
+ var a= parseInt(document.getElementById("anr").value);
+ var b= parseInt(document.getElementById("bnr").value);
+  var res=a*b;
+    document.getElementById("cnr").value = res;
+
+     if (document.getElementById("rad1").checked)
+{
+var totalamt=res-res*2/100;
+document.getElementById("tmt").value = totalamt;
+     
+   
+    dis="2%";
+alert("you got"+dis+"discount");
+
+
+}
+    if (document.getElementById("rad2").checked) 
+{
+var totalamt=res-res*5/100;
+document.getElementById("tmt").value = totalamt;
+        dis="5%";
+alert("you got"+dis+"discount");
+
+}
+}
+
+</script>
+</head>
+
+<body>
+<h1>billing</h1>
+<table >
+<tr>
+<td>
+<form>
+ITEM:<select name="s1"><option value=="s2">rice</option><option value=="s3">flour</option><option value=="s4">sugar</option><option value=="s5">salt</option></select><br><br>        
+QUANTITY: <input type="number" id="anr" name="price"><br><br>
+PRICE:    <input type="number" id="bnr" name="price"><br><br>
+AMOUNT:   <input type="number" id="cnr" name="amt"><br><br>
+NET AMOUNT : <input type="number" id="tmt" name="netamt"><br><br>
+PAYMENT<br>
+<label><input type="radio" id="rad1" name="same" />cash<br></label>
+        <label><input type="radio" id="rad2" name="same" />credit<br></label>
+        
+<input type="button" value="compute" onclick="calculate()">
+</form>
+</td>
+</tr>
+</table>
+</body>
+</html>
